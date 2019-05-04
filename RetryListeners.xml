@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multibrowser"  parallel="tests">
+<listeners>
+<listener class-name="testNgTutorial.TestNGListeners"></listener>
+<listener class-name="testNgTutorial.RetryListeners"></listener>
+</listeners>
+<test name="testwithfirefox">
+<classes>
+<class name="testNgTutorial.RetryClassTest"></class>
+</classes>
+</test>
+</suite>

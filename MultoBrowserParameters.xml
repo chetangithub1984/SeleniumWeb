@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multibrowser"  parallel="tests">
+<listeners>
+<listener class-name="testNgTutorial.TestNGListeners"></listener>
+</listeners>
+<test name="testwithfirefox">
+<parameter name="browser" value="firefox"></parameter>
+<classes>
+<class name="testNgTutorial.MultiBrowser"></class>
+</classes>
+</test>
+<test name="testwithchrome">
+<parameter name="browser" value="chrome"></parameter>
+<classes>
+<class name="testNgTutorial.MultiBrowser"></class>
+</classes>
+</test>
+</suite>

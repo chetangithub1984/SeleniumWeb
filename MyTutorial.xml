@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNgTutorials">
+<test name="Annotations Test">
+<classes>
+<class name="testNgTutorial.TestNgAnnotations"></class>
+</classes>
+</test>
+
+<test name="GroupTest">
+<groups>
+<run>
+<include name="Sanity"></include>
+<include name="Functional"></include>
+</run>
+</groups>
+<classes>
+<class name="testNgTutorial.GroupTest"></class>
+</classes>
+</test>
+
+<parameter name="username" value="username1"></parameter>
+<parameter name="password" value="password1"></parameter>
+<test name="Parameter Test">
+<classes>
+<class name="testNgTutorial.ParametersExample"></class>
+</classes>
+</test>
+
+<test name="Dependson Test">
+<classes>
+<class name="testNgTutorial.DependsOnTest"></class>
+</classes>
+</test>
+
+<test name="Priority Test">
+<classes>
+<class name="testNgTutorial.TestNgPriorityTest"></class>
+</classes>
+</test>
+
+<test name="DataProvider Test">
+<classes>
+<class name="testNgTutorial.DataProviderTest"></class>
+</classes>
+</test>
+</suite>

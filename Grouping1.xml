@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Grouptest">
+	<test name="grouptest1">
+		<groups>
+			<define name="All">
+				<include name="Sanity"></include>
+				<include name="Functional"></include>
+			</define>
+			<run>
+				<include name="All"></include>
+			</run>
+		</groups>
+		<classes>
+
+		<class name="testNgTutorial.GroupTest"></class>
+		</classes>
+
+
+	</test>
+
+
+</suite>
