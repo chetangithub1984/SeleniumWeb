@@ -55,7 +55,7 @@ public class Excelpractice {
 					         map.put(columnname, columnvalue);
 					         break;
 				case NUMERIC:
-					columnvalue = sheet.getRow(i).getCell(j).getStringCellValue();
+					columnvalue = sheet.getRow(i).getCell(j).getNumericCellValue();
 			         map.put(columnname, columnvalue);
 			         break;
 			      
