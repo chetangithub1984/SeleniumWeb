@@ -51,10 +51,20 @@ public class Excelpractice {
 
 				switch (cell.getCellTypeEnum()) {
 				case STRING:
-					columnvalue = sheet.getRow(i).getCell(j)
-							.getStringCellValue();
-					map.put(columnname, columnvalue);
-					break;
+					         columnvalue = sheet.getRow(i).getCell(j).getStringCellValue();
+					         map.put(columnname, columnvalue);
+					         break;
+				case NUMERIC:
+					columnvalue = sheet.getRow(i).getCell(j).getStringCellValue();
+			         map.put(columnname, columnvalue);
+			         break;
+			      
+				case BOOLEAN:
+					  columnvalue = sheet.getRow(i).getCell(j).getBooleanCellValue();
+			         map.put(columnname, columnvalue);
+			         break;     
+					
+
 				default:
 					break;
 
@@ -65,7 +75,7 @@ public class Excelpractice {
 		}
 		wb.close();
 
-		System.out.println("list is " +list);
+		System.out.println("list is " + list);
 	}
 
 	public void specificExcelData(int row) {
@@ -99,11 +109,10 @@ public class Excelpractice {
 		return arr;
 
 	}
-	
-	@Test(dataProvider="excelread")
-	
-	public void mtd (String a , String b) {
-		System.out.println(a  +  " " + b);
+
+	@Test(dataProvider = "excelread")
+	public void mtd(String a, String b) {
+		System.out.println(a + " " + b);
 	}
 
 	public static void main(String[] args) throws IOException {
