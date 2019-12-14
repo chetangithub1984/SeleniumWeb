@@ -1,11 +1,14 @@
 package alerthandling;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 
 public class ConfirmBox {
 	
@@ -35,10 +38,10 @@ public class ConfirmBox {
 	@BeforeClass
 	
 	public void DriverSetUp () {
-		
-		System.setProperty("webdriver.gecko.driver", "E:\\Sample Project\\SeleniumWeb\\Drivers\\geckodriver.exe");
-		driver = new FirefoxDriver();
-		//driver.manage().window().maximize();
+		WebDriverManager.chromedriver().setup();
+		//System.setProperty("webdriver.gecko.driver", "E:\\Sample Project\\SeleniumWeb\\Drivers\\geckodriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
 	
 		driver.get("https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm");
 	}
