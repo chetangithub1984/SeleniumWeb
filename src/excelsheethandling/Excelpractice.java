@@ -31,6 +31,7 @@ public class Excelpractice {
 		sheet = wb.getSheet("Test Data");
 	}
 
+	@Test
 	public void exceldatacapture() throws IOException {
 
 		int totalrowcount = sheet.getPhysicalNumberOfRows();

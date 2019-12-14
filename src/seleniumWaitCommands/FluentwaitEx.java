@@ -32,8 +32,9 @@ WebDriver driver;
 	public void Fluentex() throws InterruptedException {
 		 WebElement Buzz = driver.findElement(By.xpath(".//*[@id='clock']"));
 		FluentWait<WebElement> wait = new FluentWait<WebElement>(Buzz);
-		wait.withTimeout(100, TimeUnit.SECONDS);
-		wait.pollingEvery(1, TimeUnit.SECONDS);
+		//wait.withTimeout(100,TimeUnit.SECONDS);
+		//wait.withTimeout(100, TimeUnit.SECONDS);
+		//wait.pollingEvery(1, TimeUnit.SECONDS);
 		wait.ignoring(NoSuchElementException.class);
 		
 

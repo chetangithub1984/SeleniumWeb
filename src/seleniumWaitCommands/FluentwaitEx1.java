@@ -31,8 +31,8 @@ WebDriver driver;
 	public void Fluentex() throws InterruptedException {
 		 WebElement Colour = driver.findElement(By.xpath(".//*[@id='colorVar']"));
 		FluentWait<WebElement> wait = new FluentWait<WebElement>(Colour);
-		wait.withTimeout(100, TimeUnit.SECONDS);
-		wait.pollingEvery(250, TimeUnit.MILLISECONDS);
+		//wait.withTimeout(100, TimeUnit.SECONDS);
+		//wait.pollingEvery(250, TimeUnit.MILLISECONDS);
 		wait.ignoring(NoSuchElementException.class);
 		
 		Function<WebElement, Boolean> func = new Function<WebElement, Boolean>() {

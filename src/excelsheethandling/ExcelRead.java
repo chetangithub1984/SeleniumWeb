@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.poi.ss.format.CellDateFormatter;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -59,19 +60,19 @@ public class ExcelRead {
 
 				switch (cell.getCellType()) {
 
-				case Cell.CELL_TYPE_STRING:
+				case STRING:
 
 					cellValue = sheet.getRow(i).getCell(j).getStringCellValue();
 					mymap.put(cellName, cellValue);
 					break;
 
-				case Cell.CELL_TYPE_NUMERIC:
+				case NUMERIC:
 					cellValue = sheet.getRow(i).getCell(j)
 							.getNumericCellValue();
 					mymap.put(cellName, cellValue);
 					break;
 
-				case Cell.CELL_TYPE_BOOLEAN:
+				case BOOLEAN:
 					cellValue = sheet.getRow(i).getCell(j)
 							.getBooleanCellValue();
 					mymap.put(cellName, cellValue);
