@@ -1,11 +1,8 @@
 package testNgTutorial;
 
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-import org.testng.Reporter;
+import org.testng.*;
 
-public class TestNGListeners implements ITestListener {
+public class TestNGListeners implements ITestListener, ISuiteListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -48,7 +45,15 @@ public class TestNGListeners implements ITestListener {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
 
+
+	@Override
+	public void onStart(ISuite iSuite) {
+		System.out.println("Hey   " +iSuite.getName());
+	}
+
+	@Override
+	public void onFinish(ISuite iSuite) {
+
+	}
 }
