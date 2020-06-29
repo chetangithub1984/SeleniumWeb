@@ -34,6 +34,7 @@ public class SimpleAlert {
 		oalert.accept();
 		Thread.sleep(2000);
 		driver.close();
+
 		
 	}
 		
