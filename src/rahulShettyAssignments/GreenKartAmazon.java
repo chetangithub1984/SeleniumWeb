@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -37,18 +38,27 @@ public class GreenKartAmazon {
         List<WebElement> producatnameList = driver.findElements(By.xpath("//*[@class='product-name']"));
         List<WebElement> addTocartButtons = driver.findElements(By.xpath("//*[@class='product-action']/button"));
         label1:
-        for ( String product : list) {
-               for ( int i = 0 ; i < producatnameList.size(); i ++) {
-                   if(producatnameList.get(i).getText().contains(product)){
-                       listCounter++;
-                       driver.findElement(By.xpath("(//*[@class='product-action'])[" + (i+1) + "]")).click();
-                       if(listCounter==list.size()) {
-                           break label1;
-                       }
-                   }
-               }
-
+        for (String product : list) {
+            for (int i = 0; i < producatnameList.size(); i++) {
+                if (producatnameList.get(i).getText().contains(product)) {
+                    listCounter++;
+                    driver.findElement(By.xpath("(//*[@class='product-action'])[" + (i + 1) + "]")).click();
+                    if (listCounter == list.size()) {
+                        break label1;
+                    }
+                }
             }
+
+        }
+
+        driver.findElement(By.xpath("//*[@class='cart-icon']")).click();
+        driver.findElement(By.xpath("//*[text()='PROCEED TO CHECKOUT']")).click();
+        driver.findElement(By.xpath("//*[@class='promoCode']")).sendKeys("rahulshettyacademy");
+        WebElement button = driver.findElement(By.cssSelector("button.promoBtn"));
+        Actions act = new Actions(driver);
+        act.moveToElement(button).click();
+        act.build().perform();
+
 
     }
 
